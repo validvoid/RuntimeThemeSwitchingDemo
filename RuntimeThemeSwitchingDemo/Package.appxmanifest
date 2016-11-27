@@ -8,14 +8,14 @@
 
   <Identity
     Name="12427c27-fefd-49ca-baa2-32d5477bb9e2"
-    Publisher="CN=YK"
+    Publisher="CN=validvoid"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="12427c27-fefd-49ca-baa2-32d5477bb9e2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>RuntimeThemeSwitchingDemo</DisplayName>
-    <PublisherDisplayName>YK</PublisherDisplayName>
+    <PublisherDisplayName>validvoid</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

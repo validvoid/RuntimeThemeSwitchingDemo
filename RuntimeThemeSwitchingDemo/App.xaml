@@ -4,5 +4,93 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RuntimeThemeSwitchingDemo"
     RequestedTheme="Light">
-
+    <Application.Resources>
+        <local:ThemeController x:Key="ThemeController" DefaultTheme="LightTheme"/>
+        <local:ThemeCollection x:Key="Themes">
+            <local:Theme ThemeName="LightTheme"
+                         AccentColor="#FF572886"
+                         HeadTextColor="#FF4F4F4F"
+                         PrimaryTextColor="Black"
+                         SecondaryTextColor="#FFB5B7B6"
+                         PrimaryButtonBackgroundColor="#FF965DD0"
+                         PrimaryButtonBorderColor="#FF7A5791"
+                         PrimaryButtonForegroundColor="White"
+                         SecondaryButtonBackgroundColor="White"
+                         SecondaryButtonBorderColor="#FFE1E1E1"
+                         SecondaryButtonForegroundColor="#FF4F4F4F"
+                         PageBackgroundColor="#FFF3F3F3"
+                         RightPanelBackgroundColor="White"
+                         DividerColor="#FFE1E1E1"
+                         PrimaryTextSize="15"
+                         SecondaryTextSize="14"
+                         Head1TextSize="24"
+                         Head2TextSize="24"
+                         Head3TextSize="8"
+                         PrimaryTextFontFamily="Segoe UI"
+                         SecondaryTextFontFamily="Segoe UI"
+                         TopToolbarBorderColor="#FFB1B1B1"
+                         TopToolbarButtonBackgroundColor="#FFF8F8F8"
+                         TopToolbarButtonBorderColor="#FFB1B1B1"
+                         TopToolbarButtonForegroundColor="#FFB1B1B1"
+                         >
+                <local:Theme.TopToolbarBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFECECEE" Offset="0"/>
+                        <GradientStop Color="LightGray" Offset="1"/>
+                    </LinearGradientBrush>
+                </local:Theme.TopToolbarBrush>
+                <local:Theme.DividerShadowBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-90"/>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#00ECECEC"/>
+                        <GradientStop Color="#FFECECEC" Offset="1"/>
+                    </LinearGradientBrush>
+                </local:Theme.DividerShadowBrush>
+            </local:Theme>
+            <local:Theme ThemeName="NightTheme"
+                         AccentColor="#FFdfdfdf"
+                         HeadTextColor="#FFdfdfdf"
+                         PrimaryTextColor="#FFd7d7d7"
+                         SecondaryTextColor="#FFafa5a3"
+                         PrimaryButtonBackgroundColor="White"
+                         PrimaryButtonBorderColor="White"
+                         PrimaryButtonForegroundColor="#FF20242f"
+                         SecondaryButtonBackgroundColor="#FF383a39"
+                         SecondaryButtonBorderColor="#FFd6d8d7"
+                         SecondaryButtonForegroundColor="#FFd6d8d7"
+                         PageBackgroundColor="#FF383a39"
+                         RightPanelBackgroundColor="#FF4c4c4c"
+                         DividerColor="#FF6d6d6d"
+                         PrimaryTextSize="15"
+                         SecondaryTextSize="14"
+                         Head1TextSize="24"
+                         Head2TextSize="24"
+                         Head3TextSize="8"
+                         PrimaryTextFontFamily="Segoe UI"
+                         SecondaryTextFontFamily="Segoe UI"
+                         TopToolbarBorderColor="#FF6d6d6d"
+                         TopToolbarButtonBackgroundColor="#FF515151"
+                         TopToolbarButtonBorderColor="#FF909090"
+                         TopToolbarButtonForegroundColor="#FFa1a1a1"
+                         >
+                <local:Theme.TopToolbarBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF505050" Offset="0"/>
+                        <GradientStop Color="#FF505050" Offset="1"/>
+                    </LinearGradientBrush>
+                </local:Theme.TopToolbarBrush>
+                <local:Theme.DividerShadowBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="-90"/>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#005c5c5c"/>
+                        <GradientStop Color="#FF5c5c5c" Offset="1"/>
+                    </LinearGradientBrush>
+                </local:Theme.DividerShadowBrush>
+            </local:Theme>
+        </local:ThemeCollection>
+    </Application.Resources>
 </Application>

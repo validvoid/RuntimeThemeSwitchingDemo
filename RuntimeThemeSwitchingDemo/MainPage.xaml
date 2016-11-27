@@ -5,9 +5,228 @@
     xmlns:local="using:RuntimeThemeSwitchingDemo"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Width="Auto" d:DesignHeight="960">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="GrdTitlebar" BorderThickness="0,0,0,1" BorderBrush="{Binding ActiveTheme.TopToolbarBorderBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Background="{Binding ActiveTheme.TopToolbarBrush, Mode=OneWay, Source={StaticResource ThemeController}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="{Binding ActiveTheme.TopToolbarButtonBackgroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" BorderThickness="0.5" BorderBrush="{Binding ActiveTheme.TopToolbarButtonBorderBrush, Mode=OneWay, Source={StaticResource ThemeController}}" CornerRadius="6" MinWidth="48" Margin="48,8,0,8">
+                <TextBlock Text="►" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding ActiveTheme.TopToolbarButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}"/>
+            </Border>
+            <Border Background="{Binding ActiveTheme.TopToolbarButtonBackgroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" BorderThickness="0.5" BorderBrush="{Binding ActiveTheme.TopToolbarButtonBorderBrush, Mode=OneWay, Source={StaticResource ThemeController}}" CornerRadius="6" MinWidth="48" Margin="12,8,0,8" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="&#xE81E;" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Margin="12,0,0,2" Foreground="{Binding ActiveTheme.TopToolbarButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}"/>
+                    <TextBlock Text="Default" VerticalAlignment="Center" Margin="12,0,0,2" Foreground="{Binding ActiveTheme.TopToolbarButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Grid.Column="1"/>
+                    <TextBlock Text="&gt;" Grid.Column="2" VerticalAlignment="Center" FontSize="12" Margin="8,0,0,0"/>
+                    <TextBlock Text="&#xE25A;" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Margin="12,0,0,2" Foreground="{Binding ActiveTheme.TopToolbarButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Grid.Column="3"/>
+                    <TextBlock Text="Default" VerticalAlignment="Center" Margin="12,0,24,2" Foreground="{Binding ActiveTheme.TopToolbarButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Grid.Column="4"/>
+                </Grid>
+            </Border>
+            <Border Background="{Binding ActiveTheme.TopToolbarButtonBackgroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" BorderThickness="0.5" BorderBrush="{Binding ActiveTheme.TopToolbarButtonBorderBrush, Mode=OneWay, Source={StaticResource ThemeController}}" CornerRadius="6" MinWidth="48" Margin="176,8" Grid.Column="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Path Data="M483.3,64.1L372.1,19.5L178,208.5l-116.9-89l-44.4,22.4l0,233.3l44.2,22.2l116.8-88.9l194.6,188.8l111.1-44.4  L483.3,64.1z M66.7,318.4l-0.1-119.8l66.7,59.5L66.7,318.4z M238.9,258.1l133.3-99.6l0.1,200L238.9,258.1z" Fill="{Binding ActiveTheme.TopToolbarButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" UseLayoutRounding="False" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center" Width="17.458" Height="17.967" Margin="12,0,0,0"/>
+                    <TextBlock Text="Visual Studio for Mac Fake" VerticalAlignment="Center" Margin="12,0,0,2" Foreground="{Binding ActiveTheme.TopToolbarButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Grid.Column="1"/>
+                </Grid>
+            </Border>
+            <Border Background="{Binding ActiveTheme.TopToolbarButtonBackgroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" BorderThickness="0.5" BorderBrush="{Binding ActiveTheme.TopToolbarButtonBorderBrush, Mode=OneWay, Source={StaticResource ThemeController}}" CornerRadius="6" MinWidth="48" Margin="12,8,168,8" Grid.Column="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="&#xE094;" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Margin="12,0,0,2" Foreground="{Binding ActiveTheme.TopToolbarButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}"/>
+                    <TextBlock Text="Press '^,' to search" VerticalAlignment="Center" Margin="12,0,48,2" Foreground="{Binding ActiveTheme.TopToolbarButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Grid.Column="1"/>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid x:Name="GrdWelcome" Grid.Row="1" Background="{Binding ActiveTheme.PageBackgroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle StrokeThickness="0" Fill="{Binding ActiveTheme.DividerBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Grid.Column="1" Width="1"/>
+            <Rectangle StrokeThickness="0" Width="1" Margin="0" HorizontalAlignment="Right" Fill="{Binding ActiveTheme.DividerShadowBrush, Mode=OneWay, Source={StaticResource ThemeController}}"/>
+            <Grid x:Name="GrdRightPanel" Grid.Column="2" Background="{Binding ActiveTheme.RightPanelBackgroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="48"/>
+                </Grid.RowDefinitions>
+                <Grid Margin="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.RowSpan="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ToggleSwitch x:Name="tgsNightMode" Header="Night Mode" HorizontalAlignment="Center" VerticalAlignment="Stretch" Foreground="{Binding ActiveTheme.PrimaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Toggled="toggleSwitch_Toggled"/>
+                    <ToggleSwitch x:Name="tgsFade" Header="Fade In&amp;Out" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Foreground="{Binding ActiveTheme.PrimaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" IsOn="True"/>
+                </Grid>
+                <Grid HorizontalAlignment="Right" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextWrapping="Wrap" Text="Report a Problem" Foreground="{Binding ActiveTheme.SecondaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="{Binding ActiveTheme.SecondaryTextSize, Source={StaticResource ThemeController}}" VerticalAlignment="Bottom"/>
+                    <TextBlock TextWrapping="Wrap" Text="Provide a Suggestion" Grid.Column="1" Foreground="{Binding ActiveTheme.SecondaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="{Binding ActiveTheme.SecondaryTextSize, Source={StaticResource ThemeController}}" VerticalAlignment="Bottom" Margin="24,0,0,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="&#xE15F;" FontFamily="Segoe MDL2 Assets" Foreground="{Binding ActiveTheme.SecondaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="12" VerticalAlignment="Bottom" Margin="4,0,48,4" Grid.Column="2"/>
+                </Grid>
+                <Grid Grid.Row="3" Margin="48,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="textBlock2_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Developer News" VerticalAlignment="Top" Foreground="{Binding ActiveTheme.HeadTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="24" Margin="0,0,0,24"/>
+                    <Grid Grid.Row="1" Margin="0,0,0,40">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock TextWrapping="Wrap" Text="Runtime Theme Switch" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="16" Margin="0,0,0,24"/>
+                        <TextBlock TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." VerticalAlignment="Top" Margin="0,0,0,20" Grid.Row="1" Foreground="{Binding ActiveTheme.PrimaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}"/>
+                        <TextBlock TextWrapping="Wrap" Text="Wednesday" Foreground="{Binding ActiveTheme.SecondaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="{Binding ActiveTheme.SecondaryTextSize, Source={StaticResource ThemeController}}" VerticalAlignment="Bottom" Grid.Row="2"/>
+                    </Grid>
+                    <Rectangle StrokeThickness="0" Fill="{Binding ActiveTheme.DividerBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Height="1" Grid.Row="2" Margin="0,0,0,40"/>
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock TextWrapping="Wrap" Text="Universal Windows App" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="16" Margin="0,0,0,12"/>
+                        <TextBlock TextWrapping="Wrap" Text="Wednesday" Foreground="{Binding ActiveTheme.SecondaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="{Binding ActiveTheme.SecondaryTextSize, Source={StaticResource ThemeController}}" VerticalAlignment="Bottom" Grid.Row="1" Margin="0,0,0,24"/>
+                        <TextBlock TextWrapping="Wrap" Text="Extensible Application Markup Language" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="16" Grid.Row="2" Margin="0,0,0,12"/>
+                        <TextBlock TextWrapping="Wrap" Text="Wednesday" Foreground="{Binding ActiveTheme.SecondaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="{Binding ActiveTheme.SecondaryTextSize, Source={StaticResource ThemeController}}" VerticalAlignment="Bottom" Grid.Row="3" Margin="0,0,0,24"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid x:Name="GrdLeft">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="48"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="48"/>
+                </Grid.RowDefinitions>
+                <Image Source="Assets/Visual Studio for Mac Logo.png" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="409" Width="400" Grid.ColumnSpan="5" Grid.RowSpan="5"/>
+                <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Path Data="M483.3,64.1L372.1,19.5L178,208.5l-116.9-89l-44.4,22.4l0,233.3l44.2,22.2l116.8-88.9l194.6,188.8l111.1-44.4  L483.3,64.1z M66.7,318.4l-0.1-119.8l66.7,59.5L66.7,318.4z M238.9,258.1l133.3-99.6l0.1,200L238.9,258.1z" Fill="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" UseLayoutRounding="False" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center" Width="27.5" Height="28.3"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Visual Studio" VerticalAlignment="Top" FontSize="{Binding ActiveTheme.Head1TextSize, Source={StaticResource ThemeController}}" Grid.Column="1" Margin="12,0,0,0" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" />
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="for Mac" VerticalAlignment="Center" FontSize="{Binding ActiveTheme.Head1TextSize, Source={StaticResource ThemeController}}" Grid.Column="2" Margin="12,0,0,0" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontWeight="Light"/>
+                    <Border BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="3" Background="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" Margin="12,0,0,6">
+                        <TextBlock TextWrapping="Wrap" Text="FAKE" Foreground="{Binding ActiveTheme.PrimaryButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="{Binding ActiveTheme.Head3TextSize, Source={StaticResource ThemeController}}" VerticalAlignment="Center" Margin="4,0"/>
+                    </Border>
+                    <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Sign in..." VerticalAlignment="Center" FontSize="14" Grid.Column="4" Margin="12,0,0,0" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Get Started" VerticalAlignment="Top" Foreground="{Binding ActiveTheme.HeadTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="24" Margin="0,0,0,24"/>
+                    <Grid Margin="0" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock TextWrapping="Wrap" Text="&#xE0AB;  " FontFamily="Segoe MDL2 Assets" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="12" VerticalAlignment="Center" Margin="0,1,0,0"/>
+                        <TextBlock TextWrapping="Wrap" Text="Discover what's new in Visual Studio for Mac" Margin="0" Grid.Column="1" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="16"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock TextWrapping="Wrap" Text="&#xE0AB;  " FontFamily="Segoe MDL2 Assets" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="12" VerticalAlignment="Center" Margin="0,1,0,0"/>
+                        <TextBlock TextWrapping="Wrap" Text="Get up to speed with .NET Core" Margin="0" Grid.Column="1" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="16"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock TextWrapping="Wrap" Text="&#xE0AB;  " FontFamily="Segoe MDL2 Assets" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="12" VerticalAlignment="Center" Margin="0,1,0,0"/>
+                        <TextBlock TextWrapping="Wrap" Text="Learn about Mobile Development with Xamarin" Margin="0" Grid.Column="1" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="16"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="3" Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Recent" VerticalAlignment="Top" Foreground="{Binding ActiveTheme.HeadTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="24" Margin="0,0,0,24"/>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock TextWrapping="Wrap" Text="&#xE74C;  " FontFamily="Segoe MDL2 Assets" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="12" VerticalAlignment="Center" Margin="0,1,0,0"/>
+                        <TextBlock TextWrapping="Wrap" Text="demoProject" Margin="0" Grid.Column="1" Foreground="{Binding ActiveTheme.AccentBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="16"/>
+                    </Grid>
+                    <TextBlock TextWrapping="Wrap" Text="~/Projects/demoProject/demoProject.sln" Foreground="{Binding ActiveTheme.SecondaryTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}" FontSize="{Binding ActiveTheme.SecondaryTextSize, Source={StaticResource ThemeController}}" VerticalAlignment="Top" Grid.Row="3" Margin="20,0,0,48"/>
+                    <Grid Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Background="{Binding ActiveTheme.PrimaryButtonBackgroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" CornerRadius="4" Margin="0,0,12,0" BorderBrush="{Binding ActiveTheme.PrimaryButtonBorderBrush, Mode=OneWay, Source={StaticResource ThemeController}}" BorderThickness="1">
+                            <TextBlock Text="New Project..." Margin="16,2,16,4" Foreground="{Binding ActiveTheme.PrimaryButtonForegroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}"/>
+                        </Border>
+                        <Border Background="{Binding ActiveTheme.SecondaryButtonBackgroundBrush, Mode=OneWay, Source={StaticResource ThemeController}}" CornerRadius="4" Grid.Column="1" BorderBrush="{Binding ActiveTheme.SecondaryButtonBorderBrush, Mode=OneWay, Source={StaticResource ThemeController}}" BorderThickness="1">
+                            <TextBlock Text="Open..." Margin="16,3,16,4" Foreground="{Binding ActiveTheme.HeadTextBrush, Mode=OneWay, Source={StaticResource ThemeController}}"/>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
